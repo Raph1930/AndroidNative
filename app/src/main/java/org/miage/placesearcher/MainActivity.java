@@ -7,7 +7,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
@@ -20,20 +19,15 @@ import com.squareup.otto.Subscribe;
 
 import org.miage.placesearcher.event.EventBusManager;
 import org.miage.placesearcher.event.SearchResultEvent;
-import org.miage.placesearcher.model.PlaceAddress;
 import org.miage.placesearcher.ui.PlaceAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
-import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import jp.wasabeef.recyclerview.adapters.SlideInRightAnimationAdapter;
-import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,20 +36,12 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     private PlaceAdapter mPlaceAdapter;
 
-    @BindView(R.id.recyclerView2)
-    RecyclerView mRecyclerView2;
-    private PlaceAdapter mPlaceAdapter2;
-
     @BindView(R.id.activity_main_search_adress_edittext)
     EditText mSearchEditText;
 
     @BindView(R.id.activity_main_loader)
     ProgressBar mProgressBar;
 
-    /*
-    @BindView((R.id.AddStreet))
-    Button mButton;
-*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         //set
         mRecyclerView.setAdapter(new SlideInRightAnimationAdapter(defilement));
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
 
         // Set textfield value according to intent
@@ -160,10 +145,9 @@ public class MainActivity extends AppCompatActivity {
         switchToMapIntent.putExtra("currentSearch", mSearchEditText.getText().toString());
         startActivity(switchToMapIntent);
     }
-/*
-    @OnClick(R.id.AddStreet)
-    public void buttonAdd(){
-        PlaceAddress place = new PlaceAddress();
-        this.mPlaceAdapter.addPlaces(place);
-    }*/
+
+    public void change(View v){
+        Intent switchToFeature = new Intent(this, FeatureActivity.class);
+        startActivity(switchToFeature);
+    }
 }
