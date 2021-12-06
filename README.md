@@ -12,8 +12,8 @@ Ajouter des sections dans build.gradle (project) <br/>
 
 ### Démonstration 
 Feature 1 (Animer le défilement): <br/>
-![image](https://user-images.githubusercontent.com/60882032/144858178-0c6c2e7a-71e4-4860-8096-1c437f42aa12.gif)
-![image](https://user-images.githubusercontent.com/60882032/144858199-eceebf00-24cf-4a4b-a873-9883d31fb9a9.gif)
+<img src="https://user-images.githubusercontent.com/60882032/144858178-0c6c2e7a-71e4-4860-8096-1c437f42aa12.gif" />
+![alt text](https://user-images.githubusercontent.com/60882032/144858199-eceebf00-24cf-4a4b-a873-9883d31fb9a9.gif)
 
 Feature 2 (Animer l'ajout d'item dans un recyclerview) : <br/>
 ![image](https://user-images.githubusercontent.com/60882032/144858235-e45711b6-1560-430f-9b05-2d766a691287.gif)
